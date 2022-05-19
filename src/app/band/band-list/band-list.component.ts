@@ -10,8 +10,15 @@ import { BandService } from '../band.service';
 })
 export class BandListComponent implements OnInit {
 
+  selectedBand!: Band;
+  selected : Boolean = false;
   bands: Array<Band>=[];
   constructor(private bandService: BandService) { }
+
+  onSelected(band: Band): void {
+    this.selected = true;
+    this.selectedBand = band;
+  }
 
   getBands():void{
     this.bandService.getBands().subscribe((bandsService)=>{this.bands=bandsService});

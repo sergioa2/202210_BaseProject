@@ -1,4 +1,10 @@
-<div class="container">
+<div *ngIf="selected">
+  <app-band-detail [bandDetail]="selectedBand"></app-band-detail>
+ </div>
+
+ <hr />
+
+<div class="container-fluid">
   <div class="row">
       <div class="col">
           <table class="table">
@@ -17,7 +23,7 @@
                     <dd>{{s.id}}</dd>
                   </td>
                   <td>
-                    <dd>{{s.name}}</dd>
+                    <dd (click)="onSelected(s)">{{s.name}} </dd>
                   </td>
                   <td>
                     <dd>{{s.numberOfMembers}}</dd>

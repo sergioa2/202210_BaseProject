@@ -1,3 +1,25 @@
-<p>
-  band-detail works!
-</p>
+
+<div class="container-fluid">
+  <p class="h3 p-3">{{ bandDetail.name }}</p>
+  <div class="row">
+    <div class="col-2">
+      <div class="thumb">
+        <img
+          class="img-fluid"
+          src="{{ bandDetail.image }}"
+          alt="{{ bandDetail.name }}"
+        />
+      </div>
+    </div>
+    <div class="col">
+      <dl>
+        <dt class="bold">Description</dt>
+        <dd>{{ bandDetail.description }}</dd>
+        <hr />
+        <dt class="bold">Popular Songs</dt>
+        <dd>{{ bandDetail.popularSongs }}</dd>
+
+      </dl>
+    </div>
+  </div>
+ </div>
